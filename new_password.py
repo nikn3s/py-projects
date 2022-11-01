@@ -31,9 +31,7 @@ def main():
 
 def pass_gen():
     for i in range(length):
-        print(randint(0, 10), end="")
-        print(choice(letters), end="")
-    print("\nThe password has double the number you've typed in.")
+        print(randint(0, 10) and choice(letters) end="")
 main()
 
 # def get_length():
