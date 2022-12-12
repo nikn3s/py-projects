@@ -1,9 +1,15 @@
-def ceasar_cipher(message, cipher):
+def ceasar_cipher(message, shift):
+    # create a varible to store message
     enc_word = ""
+    # loop over each letter in the word
     for l in message:
+        # convert each letter into ascii code
         coded_l = ord(l)
-        shifted = coded_l + cipher
+        # shift the letter x steps
+        shifted = coded_l + shift
+        # convert into characters
         enc_chr = chr(shifted)
+        # insert into previously created string
         enc_word += enc_chr
 
     return enc_word
