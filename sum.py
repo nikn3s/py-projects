@@ -1,5 +1,4 @@
-import sys as s
-# file.py
+# sum.py
 def sumup(*n):
     # varible stores all entered values 
     allInt = (num for num in n)
