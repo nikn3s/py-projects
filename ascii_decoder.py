@@ -12,17 +12,24 @@ def getArgs():
     #creating empty character list to hold ASCII numbers
     char_list = []
     #opening the file.txt
-    with open(file, "r") as f:
-        for line in f:
-            char_list.append(int(line.strip()))
+    try:    
+        with open(file, "r") as f:
+            for line in f:
+                char_list.append(int(line.strip()))
+    except ValueError:
+        return "Value Error: The file provided must contain just numbers"
+
     return char_list
 
 def decodeASCII(charList:list[int]) -> str:
-    asciiList = []
-    for value in charList:
-        temp = chr(value)
-        asciiList.append(temp)
-    output = ''.join(asciiList)
-    return output
+    try:
+        asciiList = []
+        for value in charList:
+            temp = chr(value)
+            asciiList.append(temp)
+        output = ''.join(asciiList)
+        return output
+    except Exception as e:
+        return f"{e}\nMake sure the file just contains numbers on seperate lines"
 
 print(decodeASCII(getArgs()))
