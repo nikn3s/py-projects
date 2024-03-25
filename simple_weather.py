@@ -4,7 +4,7 @@ import sv_ttk
 import requests as req
 
 class ExpandableFrame(ttk.Frame):
-    def __init__(self, master, widgets:list, notHolders:bool, tog_btn, gridx=0, gridy=0):
+    def __init__(self, master, widgets:list, tog_btn, gridx=0, gridy=0):
         super().__init__(master)
         self.widgets = widgets
         self.notHolders = notHolders
@@ -91,7 +91,7 @@ class mainScreen(tk.Tk):
         self.displayExtraInfo()
 
     def displayExtraInfo(self)->None:
-        ExpandableFrame(self, self.extraWidgets,notHolders=True, gridx=0, gridy=0, tog_btn=self.togglebtn)
+        ExpandableFrame(self, self.extraWidgets, gridx=0, gridy=0, tog_btn=self.togglebtn)
 
 
     def updateWeather(self)->None:
